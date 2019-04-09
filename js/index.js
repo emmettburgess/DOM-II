@@ -47,12 +47,30 @@ nav1.addEventListener("mouseover", function() {
 
 
 
-let contentPickEle = document.querySelector(".content-pick");
-contentPickEle.addEventListener("click", event => {
-  if (event.target.className === "btn") {
+// let contentPickEle = document.querySelector(".content-pick");
+// contentPickEle.addEventListener("click", event => {
+//   if (event.target.className === "btn") {
 
-      event.target.style.backgroundColor = "green";
-      event.target.color = "white";
+//       event.target.style.backgroundColor = "green";
+//       event.target.color = "white";
  
-  }
+//   }
+// });
+
+let navColor = document.querySelector('header .nav') ;
+
+navColor.addEventListener("mouseover", function(event) {
+    event.target.style.color = "green";
+
+    setTimeout(function() {
+        event.target.style.color = "";
+    }, 500);
+}, false);
+
+let headerChange = document.querySelectorAll('.text-content');
+
+headerChange.forEach(header => {
+    header.addEventListener("wheel", function(event) {
+        event.target.style.color = "blue";
+    });
 });
