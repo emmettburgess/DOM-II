@@ -14,6 +14,9 @@ signBtn1.addEventListener("click", function(){
         signBtn1.style.backgroundColor = "#17A2B8";
     }, 500);
 }, false);
+signBtn1.addEventListener("click", function(event){
+    TweenLite.to(signBtn1, 1, {rotation: 360});
+});
 
 signBtn2.addEventListener("click", function(){
     signBtn2.style.backgroundColor = "green";
@@ -23,6 +26,9 @@ signBtn2.addEventListener("click", function(){
         signBtn2.style.backgroundColor = "#17A2B8";
     }, 500);
 }, false);
+signBtn2.addEventListener("click", function(event){
+    TweenLite.to(signBtn2, 1, {rotation: 360});
+});
 
 signBtn3.addEventListener("click", function(){
     signBtn3.style.backgroundColor = "yellow";
@@ -32,11 +38,15 @@ signBtn3.addEventListener("click", function(){
         signBtn3.style.backgroundColor = "#17A2B8";
     }, 500);
 }, false);
+signBtn3.addEventListener("click", function(event){
+    TweenLite.to(signBtn3, 1, {rotation: 360});
+});
 
 let navs = Array.from(document.getElementsByClassName("nav-link"));
 console.log(navs);
 
 let nav1 = navs[0];
+
 nav1.addEventListener("mouseover", function() {
     nav1.style.color = "#17A2B8";
 
@@ -73,4 +83,33 @@ headerChange.forEach(header => {
     header.addEventListener("wheel", function(event) {
         event.target.style.color = "blue";
     });
+});
+
+document.addEventListener("copy", function(event){
+    event.preventDefault();
+    alert("Write your own content, you pleb.");
+});
+
+let title = document.querySelector(".logo-heading");
+title.addEventListener("click", function(event){
+    TweenLite.to(title, 1, {rotation: 360});
+});
+
+document.addEventListener("keydown", function(event){
+    if (event.keyCode === 81) {
+        alert("Q was pressed.");
+    };
+});
+
+
+window.addEventListener("load", (event) => {
+    alert("Page is loaded");
+});
+
+title.addEventListener("dblclick", function(event) {
+    event.target.style.color = "grey";
+});
+
+nav1.addEventListener("click", function(){
+    alert("You're on the homepage, idiot.");
 });
